@@ -1,0 +1,22 @@
+{
+  "name": "vue-geb",
+  "version": "0.1",
+  "main": "vue-geb.js",
+  "files": [
+    "vue-geb.js"
+  ],
+  "description": "Global Event Bus for Vue.js apps",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vouill/vue-geb"
+  },
+  "bugs": "https://github.com/vouill/vue-geb/issues",
+  "dependencies": {
+    "rxjs": "^5.0.0-rc.4"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  }
+}
