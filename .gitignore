@@ -1,1 +1,5 @@
 .idea/
+./example/node_modules
+/example/dist/
+/example/npm-debug.log
+.DS_Store

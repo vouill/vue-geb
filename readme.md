@@ -4,8 +4,9 @@ Vue-geb is a vue Global Event Bus plugin to help broadcast event accros the app 
 
 ## Install
 
-* npm install --save vue-geb
-
+```bash
+npm install --save vue-geb
+```
 ## Use
 
 In your `main.js` : 
