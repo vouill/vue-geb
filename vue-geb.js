@@ -1,4 +1,4 @@
-import {Subject} from 'rxjs/Subject'
+var Subject = require('rxjs/subject').Subject
 
 const vouillMindBus = new Subject()
 vouillMindBus.subscribe(o => {

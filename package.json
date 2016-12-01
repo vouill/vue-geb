@@ -1,6 +1,6 @@
 {
   "name": "vue-geb",
-  "version": "0.1",
+  "version": "0.1.1",
   "main": "vue-geb.js",
   "files": [
     "vue-geb.js"
