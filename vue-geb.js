@@ -7,7 +7,7 @@ vouillMindBus.subscribe(o => {
 
 var geb = {}
 geb.install = function (Vue, options) {
-    Vue.directive('v-geb-click-emit', {
+    Vue.directive('geb-click-emit', {
         inserted: function (el, binding) {
             el.addEventListener('click', (event) => {
                 vouillMindBus.next(binding.value)
