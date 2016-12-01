@@ -19,7 +19,7 @@
 <script>
     export default{
         created: function () {
-            this.$geb().getBus().subscribe(data => {
+            this._sub = this.$geb().getBus().subscribe(data => {
                 if (this.selector && this.selector === data.id) {
                     this.logged = data.payload
                     return
@@ -28,6 +28,11 @@
                     this.logged = data.payload
                 }
             })
+        },
+        destroyed: function () {
+            if (this._sub) {
+                this._sub.unsubscribe()
+            }
         },
         data(){
             return {
