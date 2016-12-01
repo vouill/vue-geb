@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://github.com/vouill/vue-geb" target="_blank">
-    <img width="150" src="https://github.com/vouill/vue-geb/tree/master/docs/beg-logo.png">
+    <img width="150" src="https://raw.githubusercontent.com/vouill/vue-geb/master/docs/geb-logo.png">
   </a>
 </p>
 
