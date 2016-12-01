@@ -1,6 +1,6 @@
 var Subject = require('rxjs/subject').Subject
 
-const vouillMindBus = new Subject()
+var vouillMindBus = new Subject()
 vouillMindBus.subscribe(o => {
     console.log(`[VMB] received : ${JSON.stringify(o)}`)
 })
