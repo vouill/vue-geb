@@ -1,5 +1,11 @@
 # Vue-geb 
 
+<p align="center">
+  <a href="https://github.com/vouill/vue-geb" target="_blank">
+    <img width="150" src="https://github.com/vouill/vue-geb/tree/master/docs/beg-logo.png">
+  </a>
+</p>
+
 Vue-geb is a vue Global Event Bus plugin to help broadcast event accros the app using the power of observables.
 
 [Demo](https://vouill.github.io/vue-geb/)
