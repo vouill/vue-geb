@@ -11,7 +11,7 @@ npm install --save vue-geb
 
 In your `main.js` : 
 ```
-import geb from 'geb'
+import geb from 'vue-geb'
 
 Vue.use(geb)
 ```
