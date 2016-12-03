@@ -1,29 +1,71 @@
 <template>
     <div id="app">
-        <div>
+        <div class="col">
+            <logallcomponent></logallcomponent>
             <h1>Vue-geb plugin example</h1>
-            <p>
-                This demo uses Vue-geb to pass a payload to any target you want <br>
-                It' up to you to implement the logic you want behind every reception of event.<br>
-                In selector matches the target, the targeted component will log the payload.<br>
-                If the selector is all it will log everything.
-            </p>
-            <p> Every component can send an event to any other component, you can try from <strong>child</strong> to
-                <strong>foo</strong> , or from <strong>child</strong> to <strong>doge</strong>.</p>
-            <p> Using a custom click geb directive to <strong>'foo'</strong> saying <strong>'Lorem'</strong>:
-                <button v-geb-click-emit="{id:'foo',payload:'Lorem'}">Send</button>
+            <p>The Global Event Bus (GEB) is accessible to every Vue component.<br>
+                From any component you can emit or receive data from the GEB.</p>
+            <h2>Emit to the GEB Stream</h2>
+            <h3>Directive: </h3>
+            <ul>
+                <li>
+                    <pre v-highlightjs><code>v-geb-click-emit="{foo:'bar'}"</code></pre>
+                    <button v-geb-click-emit="{foo:'bar'}">Send</button>
+                </li>
+
+            </ul>
+
+            <h3>Methods</h3>
+            <ul>
+                <li><pre v-highlightjs><code>methods: {
+            sendToBus: function () {
+                this.$geb.emit({payload: this.payload})
+            }
+        }</code></pre>
+                    <simpletobus></simpletobus>
+                </li>
+
+            </ul>
+            <h2>Subscribe to the GEB stream</h2>
+            <h3>Get all the events</h3>
+            <div>
+                <p>To get to the entire bus:</p>
+                <pre v-highlightjs><code>this.$geb.getBus()</code></pre>
+                <p>Then use .subscribe(cb) to pass a callback for each event</p>
+                <ul>
+                    <li><pre v-highlightjs><code>created: function () {
+            this._sub = this.$geb.getBus().subscribe(data => {
+                        console.log(data)
+                        // do anything you want with data here
+                    }
+            )
+        }</code></pre>
+                    </li>
+                </ul>
+                <p>An example of this method use is the component logging all the bus data stream at the top of your
+                    screen</p>
+                <h3>Get only specific events</h3>
+                <p>To make a component listening to specific events : </p>
+                <p>In this example the components only listen to events with at least: {id:props.selector}</p>
                 <tobus></tobus>
-            </p>
-        </div>
-        <div class="flexmos">
-            <logcomponent selector="all"></logcomponent>
-            <logcomponent selector="foo"></logcomponent>
-            <logcomponent selector="bar">
-                <logcomponent selector="doge"></logcomponent>
-            </logcomponent>
-            <logcomponent selector="parent">
-                <logcomponent selector="child"></logcomponent>
-            </logcomponent>
+                <pre v-highlightjs><code>created: function () {
+            this._sub = this.$geb.getFilteredBus({id: this.selector}).subscribe(data => {
+                        console.log(data)
+                        // do anything you want with data here
+                    }
+            )
+        },</code></pre>
+                <logidcomponent selector="foo"></logidcomponent>
+                <logidcomponent selector="bar"></logidcomponent>
+                <p>Tip: You can be add more props: {id:'someId', component:'modal'}</p>
+                <pre v-highlightjs><code>created: function () {
+            this._sub = this.$geb.getFilteredBus({id: this.selector,component:'modal'}).subscribe(data => {
+                        console.log(data)
+                        // do anything you want with data here
+                    }
+            )
+        },</code></pre>
+            </div>
         </div>
     </div>
 </template>
@@ -33,7 +75,8 @@
         data () {
             return {
                 msg: 'Welcome to Your Vue.js App',
-
+                inTarget: '',
+                inPayload: ''
             }
         }
     }
@@ -41,33 +84,38 @@
 
 <style>
     #app {
+        padding-top: 60px;
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         color: #2c3e50;
-        margin-top: 60px;
     }
 
-    h1, h2 {
+    body {
+        margin: 0;
+    }
+
+    h1, h2, h3, h4 {
         font-weight: normal;
+        margin: 0.5em;
+    }
+
+    p {
+        margin-left: 1em;
+    }
+
+    .noListStyle {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    pre {
+        margin: 0;
+        margin-left: 1em;
     }
 
     ul {
-        list-style-type: none;
-        padding: 0;
+        margin: 0;
     }
 
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    a {
-        color: #42b983;
-    }
-
-    .flexmos {
-        display: flex;
-        flex-wrap: wrap;
-    }
 </style>

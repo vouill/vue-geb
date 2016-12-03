@@ -1,4 +1,4 @@
-# Vue-geb 
+# Vue-geb - Global Event Bus
 
 Vue-geb is a vue Global Event Bus plugin to help broadcast event accros the app using the power of observables.
 
@@ -20,27 +20,29 @@ Vue.use(geb)
 
 ### How do i emit an event in the global Event Bus ?
 
-#### 2 ways to do so :
-By a directive :
+#### 2 ways :
+With a  directive :
 
 ```html
 <button v-geb-click-emit="{id:'foo',payload:'Lorem'}">Send</button>
 ```
-When clicked, an event containing `{id:'foo',payload:'Lorem'}` is emitted inside the Global Event Bus
+When clicked, an event containing `{id:'foo',payload:'Lorem'}` is emitted inside the Global Event Bus. (Note: you are not constrained by any format, the object format you send is up to you)
 
-By a method inside a Vue Component : 
+With a method inside a Vue Component : 
 
 ```javascript
 methods: {
             sendToBus: function(){
-               this.$geb().emit({id:'someId',payload:this.itCanBeData})
+               this.$geb.emit({id:'someId',payload:this.itCanAlsoBeData})
             }
         }
 ```
 
-You can emit an javascript object by this method : `this.$geb().emit(obj)`
+You can emit event with this method : `this.$geb().emit(data)`
 
 ### How do i listen to the Global Event Bus ?
+
+To listen to all the events:
 
 ```javascript
 created: function () {
@@ -50,6 +52,22 @@ created: function () {
             })
         },
 ```
+
+To be notified by specific events : 
+
+```javascript
+created: function () {
+            this._sub = this.$geb.getFilteredBus({id: 'foo'}).subscribe(data => {
+                       // you only get events containing at least the attribute equal to 'foo'
+                    }
+            )
+        },
+```
+
+
+When you do: 
+`this.$geb().getBus()` 
+You get an Observable object that handle all the events in the GEB.
 
 Dont forget to `unsubscribe` when you destroy the component to avoid memory leak
 
