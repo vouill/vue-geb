@@ -31,7 +31,7 @@
 
     .logAll div {
         padding: 0 1em;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 </style>
 <script>

@@ -1055,7 +1055,6 @@ geb.install = function (Vue, options) {
                 return flag;
             });
         }
-
     };
 };
 
@@ -11764,7 +11763,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, ".logAll{display:block;position:fixed;top:0;left:0;width:100%;color:#fff;background-color:#add8e6;display:flex;height:75px;z-index:10}.logAll .logArea{background-color:#7ba6b4;flex-grow:1}.logAll div{padding:0 1em;overflow-y:scroll}", ""]);
+exports.push([module.i, ".logAll{display:block;position:fixed;top:0;left:0;width:100%;color:#fff;background-color:#add8e6;display:flex;height:75px;z-index:10}.logAll .logArea{background-color:#7ba6b4;flex-grow:1}.logAll div{padding:0 1em;overflow-y:auto}", ""]);
 
 // exports
 
@@ -11792,7 +11791,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, ".logId{background-color:#7d7;display:flex;color:#fff;margin:1em 0;height:80px;overflow-y:scroll}.logId .logArea{background-color:#78c485;flex-grow:1}.logId div{padding:0 1em;overflow-y:scroll}", ""]);
+exports.push([module.i, ".logId{background-color:#7d7;display:flex;color:#fff;margin:1em 0;height:80px;overflow-y:auto}.logId .logArea{background-color:#78c485;flex-grow:1}.logId div{padding:0 1em;overflow-y:auto}", ""]);
 
 // exports
 

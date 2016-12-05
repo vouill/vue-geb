@@ -17,7 +17,7 @@
         color: white;
         margin: 1em 0;
         height: 80px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .logId .logArea {
@@ -27,7 +27,7 @@
 
     .logId div {
         padding: 0 1em;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
 </style>
