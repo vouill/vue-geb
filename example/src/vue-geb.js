@@ -36,8 +36,7 @@ geb.install = function (Vue, options) {
             });
         }
     })
-    Vue.prototype.$geb =
-         {
+    Vue.prototype.$geb = {
             getBus: function () {
                 return gebus
             },
@@ -59,7 +58,6 @@ geb.install = function (Vue, options) {
                     return flag
                 })
             }
-
     }
 }
 
