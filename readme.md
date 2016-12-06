@@ -18,6 +18,7 @@ import geb from 'vue-geb'
 Vue.use(geb)
 ```
 
+ [Example usage with modals](https://vouill.github.io/vouillKit/#modals)
 ### How do i emit an event in the global Event Bus ?
 
 #### 2 ways :
@@ -59,7 +60,7 @@ To be notified by specific events :
 ```javascript
 created: function () {
             this._sub = this.$geb.getFilteredBus({id: 'foo'}).subscribe(data => {
-                       // you only get events containing at least the attribute equal to 'foo'
+                       // you only get events containing at least the attribute id equal to 'foo'
                     }
             )
         },
