@@ -20,7 +20,7 @@ Vue.use(geb)
 
  [Example usage with modals](https://vouill.github.io/vouillKit/#modals)
 ### How do i emit an event in the global Event Bus ?
-
+git
 #### 2 ways :
 With a  directive :
 
