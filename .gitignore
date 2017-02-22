@@ -3,3 +3,4 @@
 /example/dist/
 /example/npm-debug.log
 .DS_Store
+node_modules
