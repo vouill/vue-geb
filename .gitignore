@@ -1,6 +1,9 @@
-.idea/
-./example/node_modules
-/example/dist/
-/example/npm-debug.log
 .DS_Store
-node_modules
+node_modules/
+dist/
+npm-debug.log
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+lib
+.idea

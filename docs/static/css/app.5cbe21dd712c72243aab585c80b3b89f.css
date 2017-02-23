@@ -1,0 +1,121 @@
+
+#app {
+  padding-top: 60px;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+body {
+  margin: 0;
+}
+h1, h2, h3, h4 {
+  font-weight: normal;
+  margin: 0.5em;
+}
+p {
+  margin-left: 1em;
+}
+.noListStyle {
+  list-style: none;
+  padding-left: 0;
+}
+pre {
+  margin: 0;
+  margin-left: 1em;
+}
+ul {
+  margin: 0;
+}
+
+
+h1[data-v-41dde93d], h2[data-v-41dde93d] {
+  font-weight: normal;
+}
+ul[data-v-41dde93d] {
+  list-style-type: none;
+  padding: 0;
+}
+li[data-v-41dde93d] {
+  display: inline-block;
+  margin: 0 10px;
+}
+a[data-v-41dde93d] {
+  color: #42b983;
+}
+
+.logAll {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background-color: lightblue;
+  display: -ms-flexbox;
+  display: flex;
+  height: 75px;
+  z-index: 10;
+}
+.logAll .logArea {
+  background-color: #7BA6B4;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+.logAll div {
+  padding: 0 1em;
+  overflow-y: auto;
+}
+
+.logId {
+  background-color: #77DD77;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  margin: 1em 0;
+  height: 80px;
+  overflow-y: auto;
+}
+.logId .logArea {
+  background-color: #78C485;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
+}
+.logId div {
+  padding: 0 1em;
+  overflow-y: auto;
+}
+
+
+.tobus {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border: 1px solid lightgreen;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+.tobus li {
+  display: block;
+}
+.tobus ul {
+  padding: 0;
+}
+
+.toBus[data-v-aa531584] {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border: 1px solid lightgreen;
+  padding: 0.5em;
+  margin: 0.5em;
+  position: relative;
+}
+.btmright[data-v-aa531584] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.tobus li[data-v-aa531584] {
+  display: block;
+}
+
+/*# sourceMappingURL=app.5cbe21dd712c72243aab585c80b3b89f.css.map*/
