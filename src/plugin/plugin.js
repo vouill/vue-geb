@@ -1,8 +1,32 @@
-var Subject = require('rxjs/subject').Subject
-Subject.filter = require('rxjs/add/operator/filter')
+import {Subject} from 'rxjs/Subject'
+import 'rxjs/add/operator/filter'
 
 const gebus = new Subject()
 const geb = {}
+const gebInstance = {
+  getBus: function () {
+    return gebus
+  },
+  emit: function (obj) {
+    gebus.next(obj)
+  },
+  getFilteredBus: function (arg) { // ex { id : 'foo'}
+    if (!isObject(arg)) { // arg needs to be an object
+      throw new Error("data provided to geb().filterBy() isn't an object")
+    }
+    return gebus.filter(gebItem => {
+      let flag = true
+      let props = Object.getOwnPropertyNames(arg)
+      props.forEach(prop => {
+        if (gebItem[prop] !== arg[prop]
+        ) {
+          flag = false
+        }
+      })
+      return flag
+    })
+  }
+}
 
 geb.install = function (Vue, options) {
   Vue.directive('geb-click-emit', {
@@ -26,31 +50,7 @@ geb.install = function (Vue, options) {
       })
     }
   })
-  Vue.prototype.$geb =
-  {
-    getBus: function () {
-      return gebus
-    },
-    emit: function (obj) {
-      gebus.next(obj)
-    },
-    getFilteredBus: function (arg) { // ex { id : 'foo'}
-      if (!isObject(arg)) { // arg needs to be an object
-        throw new Error("data provided to geb().filterBy() isn't an object")
-      }
-      return gebus.filter(gebItem => {
-        let flag = true
-        let props = Object.getOwnPropertyNames(arg)
-        props.forEach(prop => {
-          if (gebItem[prop] !== arg[prop]
-          ) {
-            flag = false
-          }
-        })
-        return flag
-      })
-    }
-  }
+  Vue.prototype.$geb = gebInstance
 }
 
 function isObject (obj) {
@@ -59,3 +59,5 @@ function isObject (obj) {
 
 export default geb
 
+export const gebHandler = gebInstance
+export const bus = gebus
