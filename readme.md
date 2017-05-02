@@ -51,7 +51,7 @@ this.sub = this.$geb.getFilteredBus({id:'modal'}).subscribe(data => {
 <button v-geb-click-emit="{id:'foo',payload:'Lorem'}">Send</button>
 ```
 
-Notice how we use this.sub = ... .subscribe(). You need to unsubscribe when your component unmount to avoid memory leaks.
+Notice how we use `this.sub = ... .subscribe()`. You need to unsubscribe when your component unmount to avoid memory leaks.
 
 ```javascript
 destroyed: function () {
