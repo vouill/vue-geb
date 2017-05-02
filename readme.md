@@ -63,7 +63,7 @@ destroyed: function () {
 
 Please check this [example](https://github.com/vouill/vue-geb-example) for a vue-geb modal usage.
 
-###Advanced
+### Advanced
 
 You can also access the same api as vm.$geb outside of vue context (same Event bus too):
 
