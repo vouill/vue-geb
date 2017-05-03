@@ -1,9 +1,9 @@
 {
   "name": "vue-geb",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Global Event Bus for Vue.js apps",
   "author": "Vouill <vouillon.thibaud@gmail.com>",
-  "main": "/lib/vue-geb.js",
+  "main": "./lib/vue-geb.js",
   "license": "MIT",
   "repository": {
     "type": "git",
