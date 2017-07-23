@@ -2,6 +2,9 @@
 
 Vue-geb is a vue Global Event Bus plugin to help broadcast events across the app using the power of [observables](https://github.com/Reactive-Extensions/RxJS).
 
+Only add 5kb to the rxjs library.
+
+
 [Demo](https://vouill.github.io/vue-geb/)
 
 ## Install

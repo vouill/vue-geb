@@ -15,6 +15,8 @@ var config = merge(baseWebpackConfig,{
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true
+  },externals: {
+    "rxjs": "rxjs"
   }
 });
 

@@ -1,7 +1,9 @@
-import {Subject} from 'rxjs/Subject'
-import 'rxjs/add/operator/filter'
+// import {Subject} from 'rxjs'
+import rxjs from 'rxjs'
+// import 'rxjs/add/operator/filter'
 
-const gebus = new Subject()
+const gebus = new rxjs.Subject()
+// const gebus = {}
 const geb = {}
 const gebInstance = {
   getBus: function () {
